@@ -40,7 +40,7 @@ export default function TradeGraph(props) {
       return [...acc, newTrade];
     }, [...tradeArray.current]);
     if (tradeArray.current.length > MAX_DATA_POINTS) {
-      tradeArray.current.shift();
+      tradeArray.current.splice(0, tradeArray.current.length - MAX_DATA_POINTS);
     }
   }, [trades]);
   console.log(tradeArray.current);
